@@ -1,0 +1,20 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LdapCpp", "LdapCpp\LdapCpp.vcxproj", "{ADA852D6-BE25-40E1-98D4-11E14FE09446}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ADA852D6-BE25-40E1-98D4-11E14FE09446}.Debug|Win32.ActiveCfg = Debug|Win32
+		{ADA852D6-BE25-40E1-98D4-11E14FE09446}.Debug|Win32.Build.0 = Debug|Win32
+		{ADA852D6-BE25-40E1-98D4-11E14FE09446}.Release|Win32.ActiveCfg = Release|Win32
+		{ADA852D6-BE25-40E1-98D4-11E14FE09446}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

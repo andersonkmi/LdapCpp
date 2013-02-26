@@ -1,0 +1,267 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{ADA852D6-BE25-40E1-98D4-11E14FE09446}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LdapCpp</RootNamespace>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>DynamicLibrary</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v110</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+    <IncludePath>F:\development\LdapCpp\boost-1.53\include;F:\development\LdapCpp\LdapCpp\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+    <IncludePath>F:\development\LdapCpp\boost-1.53\include;F:\development\LdapCpp\LdapCpp\;$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;LDAP_CPP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\development\LdapCpp\boost-1.53\include;F:\development\LdapCpp\LdapCpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_WINDOWS;_USRDLL;LDAP_CPP_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>F:\development\LdapCpp\boost-1.53\include;F:\development\LdapCpp\LdapCpp;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+      <TreatWChar_tAsBuiltInType>true</TreatWChar_tAsBuiltInType>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalDependencies>Wldap32.lib;Crypt32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ldapcpp\ApacheUserSearch.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPBaseDNPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPBaseDNRule.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPBindPasswordPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPBindUserPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPConfigurationInspector.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPConfigurationManager.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPConfigurationValidator.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPServerAddrPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPServerAddrRule.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPServerPortPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\LDAPTimeoutPolicy.hpp" />
+    <ClInclude Include="ldapcpp\config\ServerVendorPolicy.hpp" />
+    <ClInclude Include="ldapcpp\data\LDAPUser.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAdminLimitExceededException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAffectsMultipleDsasException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAliasDerefProblemException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAliasProblemException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAlreadyExistsException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAttributeOrValueExistsException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAuthMethodNotSupportedException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPAuthUnknownException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPBusyException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPClientLoopException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPConfidentialityRequiredException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPConnectErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPConstraintViolationException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPControlNotFoundException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPDecodingErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPEncodingErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPExceptions.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPFilterErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInappropriateAuthException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInappropriateMatchingException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInitException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInsufficientRightsException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInvalidConfigurationException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInvalidCredentialsException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInvalidDNSyntaxException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInvalidSyntaxException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPInvalidUserAccountException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPLocalErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNamingViolationException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNoMemoryException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNoObjectClassModsException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNoResultsReturnedException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNoSuchAttributeException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNoSuchObjectException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPNotSupportedException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPObjectClassViolationException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPOperationsErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPOpNotAllowedOnNonleafException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPOpNotAllowedOnRDNException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPOtherException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPParamErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPProtocolErrorException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPReferralLimitExceededException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPResultsTooLargeException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPServerDownException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPSizeLimitExceededException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPStrongAuthRequiredException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPTimeLimitExceededException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPTimeoutException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUnavailableCritExtensionException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUnavailableException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUndefinedTypeException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUnwillingToPerformException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUserAccountDisableException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUserAccountLockoutException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUserAccountPasswordExpiredException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPUserCancelledException.hpp" />
+    <ClInclude Include="ldapcpp\exception\LDAPVirtualListViewErrorException.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnection.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionFactory.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionMaker.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionNonSecurePolicy.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionSSLPolicy.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionVariableTimeoutPolicy.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionVersion2ProtocolPolicy.hpp" />
+    <ClInclude Include="ldapcpp\LDAPConnectionVersion3ProtocolPolicy.hpp" />
+    <ClInclude Include="ldapcpp\LDAPSearch.hpp" />
+    <ClInclude Include="ldapcpp\service\ActiveDir2003ServiceProvider.hpp" />
+    <ClInclude Include="ldapcpp\service\ApacheServiceProvider.hpp" />
+    <ClInclude Include="ldapcpp\service\LDAPAuthorizationProvider.hpp" />
+    <ClInclude Include="ldapcpp\service\LDAPAuthServiceProvider.hpp" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="ActiveDir2003ServiceProvider.cpp" />
+    <ClCompile Include="ApacheServiceProvider.cpp" />
+    <ClCompile Include="ApacheUserSearch.cpp" />
+    <ClCompile Include="dllmain.cpp">
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+      </PrecompiledHeader>
+      <CompileAsManaged Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</CompileAsManaged>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+      </PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="LDAPAdminLimitExceededException.cpp" />
+    <ClCompile Include="LDAPAffectsMultipleDsasException.cpp" />
+    <ClCompile Include="LDAPAliasDerefProblemException.cpp" />
+    <ClCompile Include="LDAPAliasProblemException.cpp" />
+    <ClCompile Include="LDAPAlreadyExistsException.cpp" />
+    <ClCompile Include="LDAPAttributeOrValueExistsException.cpp" />
+    <ClCompile Include="LDAPAuthMethodNotSupportException.cpp" />
+    <ClCompile Include="LDAPAuthorizationProvider.cpp" />
+    <ClCompile Include="LDAPAuthServiceProvider.cpp" />
+    <ClCompile Include="LDAPAuthUnknownException.cpp" />
+    <ClCompile Include="LDAPBaseDNRule.cpp" />
+    <ClCompile Include="LDAPBusyException.cpp" />
+    <ClCompile Include="LDAPClientLoopException.cpp" />
+    <ClCompile Include="LDAPConfidentialityRequiredException.cpp" />
+    <ClCompile Include="LDAPConfigurationInspector.cpp" />
+    <ClCompile Include="LDAPConfigurationManager.cpp" />
+    <ClCompile Include="LDAPConnectErrorException.cpp" />
+    <ClCompile Include="LDAPConnection.cpp" />
+    <ClCompile Include="LDAPConnectionMaker.cpp" />
+    <ClCompile Include="LDAPConnectionNonSecurePolicy.cpp" />
+    <ClCompile Include="LDAPConnectionSSLPolicy.cpp" />
+    <ClCompile Include="LDAPConnectionVariableTimeoutPolicy.cpp" />
+    <ClCompile Include="LDAPConnectionVersion2ProtocolPolicy.cpp" />
+    <ClCompile Include="LDAPConnectionVersion3ProtocolPolicy.cpp" />
+    <ClCompile Include="LDAPConstraintViolationException.cpp" />
+    <ClCompile Include="LDAPControlNotFoundException.cpp" />
+    <ClCompile Include="LDAPDecodingErrorException.cpp" />
+    <ClCompile Include="LDAPEncodingErrorException.cpp" />
+    <ClCompile Include="LDAPException.cpp" />
+    <ClCompile Include="LDAPFilterErrorException.cpp" />
+    <ClCompile Include="LDAPInappropriateAuthException.cpp" />
+    <ClCompile Include="LDAPInappropriateMatchingException.cpp" />
+    <ClCompile Include="LDAPInitException.cpp" />
+    <ClCompile Include="LDAPInsufficientRightsException.cpp" />
+    <ClCompile Include="LDAPInvalidConfigurationException.cpp" />
+    <ClCompile Include="LDAPInvalidCredentialsException.cpp" />
+    <ClCompile Include="LDAPInvalidDNSyntaxException.cpp" />
+    <ClCompile Include="LDAPInvalidSyntaxException.cpp" />
+    <ClCompile Include="LDAPInvalidUserAccountException.cpp" />
+    <ClCompile Include="LDAPLocalErrorException.cpp" />
+    <ClCompile Include="LDAPNamingViolationException.cpp" />
+    <ClCompile Include="LDAPNoMemoryException.cpp" />
+    <ClCompile Include="LDAPNoObjectClassModsException.cpp" />
+    <ClCompile Include="LDAPNoResultsReturnedException.cpp" />
+    <ClCompile Include="LDAPNoSuchAttributeException.cpp" />
+    <ClCompile Include="LDAPNoSuchObjectException.cpp" />
+    <ClCompile Include="LDAPNotSupportedException.cpp" />
+    <ClCompile Include="LDAPObjectClassViolationException.cpp" />
+    <ClCompile Include="LDAPOperationsErrorException.cpp" />
+    <ClCompile Include="LDAPOpNotAllowedOnNonleafException.cpp" />
+    <ClCompile Include="LDAPOpNotAllowedOnRDNException.cpp" />
+    <ClCompile Include="LDAPOtherException.cpp" />
+    <ClCompile Include="LDAPParamErrorException.cpp" />
+    <ClCompile Include="LDAPProtocolErrorException.cpp" />
+    <ClCompile Include="LDAPReferralLimitExceededException.cpp" />
+    <ClCompile Include="LDAPResultsTooLargeException.cpp" />
+    <ClCompile Include="LDAPSearch.cpp" />
+    <ClCompile Include="LDAPServerAddrRule.cpp" />
+    <ClCompile Include="LDAPServerDownException.cpp" />
+    <ClCompile Include="LDAPSizeLimitExceededException.cpp" />
+    <ClCompile Include="LDAPStrongAuthRequiredException.cpp" />
+    <ClCompile Include="LDAPTimeLimitExceededException.cpp" />
+    <ClCompile Include="LDAPTimeoutException.cpp" />
+    <ClCompile Include="LDAPUnavailableCritExtensionException.cpp" />
+    <ClCompile Include="LDAPUnavailableException.cpp" />
+    <ClCompile Include="LDAPUndefinedTypeException.cpp" />
+    <ClCompile Include="LDAPUnwillingToPerformException.cpp" />
+    <ClCompile Include="LDAPUser.cpp" />
+    <ClCompile Include="LDAPUserAccountDisableException.cpp" />
+    <ClCompile Include="LDAPUserAccountLockoutException.cpp" />
+    <ClCompile Include="LDAPUserAccountPasswordExpiredException.cpp" />
+    <ClCompile Include="LDAPUserCancelledException.cpp" />
+    <ClCompile Include="LDAPVirtualListViewErrorException.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
